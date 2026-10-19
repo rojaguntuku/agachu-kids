@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#FFE7A8">
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgAchu Kids - Happy Learning</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fffaf0;
+  color: #29483a;
+}
+
+header {
+  background: #e4f3df;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #39744b;
+}
+
+.tagline {
+  font-size: 13px;
+}
+
+button {
+  font-size: 15px;
+  padding: 12px;
+  border: 0;
+  border-radius: 14px;
+  background: #e6f1ff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #d2e9d0;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 18px;
+}
+
+.hero {
+  padding: 25px;
+  border-radius: 25px;
+  background: linear-gradient(120deg, #e2f4df, #fff0d9);
+  text-align: center;
+}
+
+.mascot {
+  font-size: 65px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  margin-top: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e4e8dc;
+  border-radius: 18px;
+  padding: 16px 10px;
+  text-align: center;
+  box-shadow: 0 3px 10px #29483a10;
+}
+
+.card .emoji {
+  font-size: 38px;
+}
+
+.card h3 {
+  margin: 8px 0;
+}
+
+.card p {
+  font-size: 13px;
+}
+
+.panel {
+  margin-top: 20px;
+  padding: 18px;
+  background: white;
+  border-radius: 20px;
+}
+
+.letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 15px 0;
+}
+
+.letters button {
+  min-width: 40px;
+  background: #f5e7ff;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #66806d;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  main {
+    padding: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <div class="logo">🐛 AgAchu Kids</div>
+    <div class="tagline">Little Steps, Happy Learning!</div>
+  </div>
+
+  <button onclick="toggleSound()" id="soundButton">
+    🔊 Sound On
+  </button>
+</header>
+
+<main>
+
+  <section id="home">
+    <div class="hero">
+      <div class="mascot">🐛 🌈 🌼</div>
+      <h1>Welcome to AgAchu Kids!</h1>
+      <p>Learn letters, stories, good habits and Indian epics.</p>
+      <button onclick="openSection('letters')">
+        🚀 Let's Learn
+      </button>
+    </div>
+
+    <h2>🌟 Choose Your Adventure</h2>
+
+    <div class="grid">
+      <button class="card" onclick="openSection('letters')">
+        <div class="emoji">🔤</div>
+        <h3>Letters & Words</h3>
+        <p>A for Apple</p>
+      </button>
+
+      <button class="card" onclick="openSection('numbers')">
+        <div class="emoji">🔢</div>
+        <h3>Numbers</h3>
+        <p>Learn to count</p>
+      </button>
+
+      <button class="card" onclick="openSection('world')">
+        <div class="emoji">🌍</div>
+        <h3>My World</h3>
+        <p>Animals, fruits, colors</p>
+      </button>
+
+      <button class="card" onclick="openSection('ramayana')">
+        <div class="emoji">🏹</div>
+        <h3>Ramayana</h3>
+        <p>Meet the characters</p>
+      </button>
+
+      <button class="card" onclick="openSection('mahabharata')">
+        <div class="emoji">📖</div>
+        <h3>Mahabharata</h3>
+        <p>Meet the heroes</p>
+      </button>
+
+      <button class="card" onclick="openSection('stories')">
+        <div class="emoji">🌙</div>
+        <h3>Stories</h3>
+        <p>Little story time</p>
+      </button>
+
+      <button class="card" onclick="openSection('habits')">
+        <div class="emoji">🪥</div>
+        <h3>Good Habits</h3>
+        <p>Healthy daily routines</p>
+      </button>
+
+      <button class="card" onclick="openSection('shlokas')">
+        <div class="emoji">🪷</div>
+        <h3>Shlokas</h3>
+        <p>Learn sacred verses</p>
+      </button>
+    </div>
+  </section>
+
+  <section id="lessonSection" class="panel hidden">
+    <button onclick="goHome()">← Home</button>
+    <h2 id="sectionTitle">Learning</h2>
+    <div id="letterButtons" class="letters"></div>
+    <div id="lessonGrid" class="grid"></div>
+  </section>
+
+</main>
+
+<footer>
+  AgAchu Kids ❤️ Learn gently. Grow happily.
+</footer>
+
+<script>
+let soundOn = true;
+
+const alphabet = [
+  ["A", "Apple", "🍎"],
+  ["B", "Ball", "⚽"],
+  ["C", "Cat", "🐱"],
+  ["D", "Dog", "🐶"],
+  ["E", "Elephant", "🐘"],
+  ["F", "Fish", "🐟"],
+  ["G", "Grapes", "🍇"],
+  ["H", "House", "🏠"],
+  ["I", "Ice Cream", "🍦"],
+  ["J", "Jug", "🏺"],
+  ["K", "Kite", "🪁"],
+  ["L", "Lion", "🦁"],
+  ["M", "Mango", "🥭"],
+  ["N", "Nest", "🪺"],
+  ["O", "Orange", "🍊"],
+  ["P", "Parrot", "🦜"],
+  ["Q", "Queen", "👑"],
+  ["R", "Rabbit", "🐰"],
+  ["S", "Sun", "☀️"],
+  ["T", "Tiger", "🐯"],
+  ["U", "Umbrella", "☂️"],
+  ["V", "Van", "🚐"],
+  ["W", "Watch", "⌚"],
+  ["X", "Xylophone", "🎵"],
+  ["Y", "Yak", "🐂"],
+  ["Z", "Zebra", "🦓"]
+];
+
+const ramayana = [
+  ["A", "Angada", "🤴"],
+  ["A", "Ahalya", "🌸"],
+  ["A", "Anjana", "🙏"],
+  ["B", "Bharata", "👑"],
+  ["H", "Hanuman", "🐒"],
+  ["J", "Janaka", "👑"],
+  ["K", "Kaikeyi", "🌺"],
+  ["K", "Kumbhakarna", "💪"],
+  ["L", "Lakshmana", "🏹"],
+  ["M", "Mandodari", "🌷"],
+  ["R", "Rama", "🏹"],
+  ["R", "Ravana", "👑"],
+  ["S", "Sita", "🌼"],
+  ["S", "Sugriva", "🐒"],
+  ["V", "Vibhishana", "🙏"]
+];
+
+const mahabharata = [
+  ["A", "Arjuna", "🏹"],
+  ["A", "Abhimanyu", "🛡️"],
+  ["B", "Bhima", "💪"],
+  ["D", "Draupadi", "🌺"],
+  ["D", "Drona", "🏹"],
+  ["G", "Gandhari", "🙏"],
+  ["K", "Krishna", "🦚"],
+  ["K", "Karna", "🏹"],
+  ["N", "Nakula", "⚔️"],
+  ["S", "Sahadeva", "⚔️"],
+  ["S", "Shakuni", "🎲"],
+  ["Y", "Yudhishthira", "👑"],
+  ["B", "Bheeshma", "🛡️"]
+];
+
+const world = [
+  ["🍎", "Apple", "Fruit"],
+  ["🍌", "Banana", "Fruit"],
+  ["🥭", "Mango", "Fruit"],
+  ["🥕", "Carrot", "Vegetable"],
+  ["🐘", "Elephant", "Animal"],
+  ["🐶", "Dog", "Animal"],
+  ["🐱", "Cat", "Animal"],
+  ["🦜", "Parrot", "Bird"],
+  ["🌹", "Rose", "Flower"],
+  ["☀️", "Sun", "Sky"],
+  ["🌙", "Moon", "Sky"],
+  ["🚗", "Car", "Vehicle"],
+  ["🔴", "Red", "Color"],
+  ["🔵", "Blue", "Color"],
+  ["🟢", "Green", "Color"],
+  ["⭐", "Star", "Shape"],
+  ["❤️", "Heart", "Shape"]
+];
+
+const habits = [
+  ["🪥", "Brush my teeth", "I brush my teeth every day."],
+  ["🧼", "Wash my hands", "I wash my hands before eating."],
+  ["🧸", "Put toys away", "I keep my toys in their place."],
+  ["🙏", "Be kind", "I use kind words and gentle hands."],
+  ["🥗", "Eat healthy food", "I try different healthy foods."],
+  ["💧", "Drink water", "I drink water throughout the day."],
+  ["📚", "Read a book", "I enjoy books with my family."],
+  ["🛏️", "Sleep on time", "I follow a calm bedtime routine."]
+];
+
+const stories = [
+  ["🌱", "The Little Seed", "A little seed grows with sunshine, water and care."],
+  ["🐰", "The Kind Rabbit", "A rabbit shares an apple with a hungry friend."],
+  ["⭐", "The Little Star", "A little star shines brightly in the night sky."],
+  ["🐢", "The Tortoise", "Slow and steady effort can help us reach our goals."]
+];
+
+const shlokas = [
+  ["Saraswati Prayer", "Saraswati Namastubhyam"],
+  ["Guru Prayer", "Gurur Brahma Gurur Vishnuh"],
+  ["Peace Prayer", "Om Shanti Shanti Shantih"]
+];
+
+function toggleSound() {
+  soundOn = !soundOn;
+
+  document.getElementById("soundButton").textContent =
+    soundOn ? "🔊 Sound On" : "🔇 Sound Off";
+
+  if (!soundOn && "speechSynthesis" in window) {
+    speechSynthesis.cancel();
+  }
+}
+
+function speak(text) {
+  if (!soundOn) return;
+
+  if ("speechSynthesis" in window) {
+    speechSynthesis.cancel();
+
+    const message = new SpeechSynthesisUtterance(text);
+    message.lang = "en-US";
+    message.rate = 0.8;
+
+    speechSynthesis.speak(message);
+  }
+}
+
+function goHome() {
+  document.getElementById("home").classList.remove("hidden");
+  document.getElementById("lessonSection").classList.add("hidden");
+}
+
+function openSection(section) {
+  const home = document.getElementById("home");
+  const panel = document.getElementById("lessonSection");
+  const title = document.getElementById("sectionTitle");
+  const grid = document.getElementById("lessonGrid");
+  const letters = document.getElementById("letterButtons");
+
+  home.classList.add("hidden");
+  panel.classList.remove("hidden");
+  grid.replaceChildren();
+  letters.replaceChildren();
+
+  const titles = {
+    letters: "🔤 English Letters & Words",
+    numbers: "🔢 Let's Count!",
+    world: "🌍 My Wonderful World",
+    ramayana: "🏹 Ramayana Names",
+    mahabharata: "📖 Mahabharata Names",
+    stories: "🌙 Little Stories",
+    habits: "🌱 Good Habits",
+    shlokas: "🪷 Shlokas"
+  };
+
+  title.textContent = titles[section] || "AgAchu Kids";
+
+  if (section === "letters") {
+    showAlphabet();
+  } else if (section === "numbers") {
+    showNumbers();
+  } else if (section === "world") {
+    showWorld();
+  } else if (section === "ramayana") {
+    showNames(ramayana);
+  } else if (section === "mahabharata") {
+    showNames(mahabharata);
+  } else if (section === "stories") {
+    showStories();
+  } else if (section === "habits") {
+    showHabits();
+  } else if (section === "shlokas") {
+    showShlokas();
+  }
+
+  window.scrollTo(0, 0);
+}
+
+function addCard(emoji, title, description, speechText) {
+  const grid = document.getElementById("lessonGrid");
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const picture = document.createElement("div");
+  picture.className = "emoji";
+  picture.textContent = emoji;
+
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+
+  const info = document.createElement("p");
+  info.textContent = description || "";
+
+  const listen = document.createElement("button");
+  listen.textContent = "🔊 Listen";
+  listen.onclick = function () {
+    speak(speechText || title);
+  };
+
+  card.append(picture, heading, info, listen);
+  grid.append(card);
+}
+
+function showAlphabet() {
+  alphabet.forEach(function (item) {
+    addCard(item[2], item[0] + " for " + item[1],
+      "Learn the letter " + item[0],
+      item[0] + " for " + item[1]);
+  });
+}
+
+function showNumbers() {
+  for (let i = 0; i <= 20; i++) {
+    addCard("🔢", String(i), "Let's count!", String(i));
+  }
+}
+
+function showWorld() {
+  world.forEach(function (item) {
+    addCard(item[0], item[1], item[2], item[1]);
+  });
+}
+
+function showNames(list) {
+  const letters = document.getElementById("letterButtons");
+  const uniqueLetters = [...new Set(list.map(function (item) {
+    return item[0];
+  }))].sort();
+
+  const allButton = document.createElement("button");
+  allButton.textContent = "All";
+  allButton.onclick = function () {
+    displayNames(list);
+  };
+  letters.append(allButton);
+
+  uniqueLetters.forEach(function (letter) {
+    const button = document.createElement("button");
+    button.textContent = letter;
+
+    button.onclick = function () {
+      displayNames(list.filter(function (item) {
+        return item[0] === letter;
+      }));
+    };
+
+    letters.append(button);
+  });
+
+  displayNames(list);
+}
+
+function displayNames(list) {
+  document.getElementById("lessonGrid").replaceChildren();
+
+  list.forEach(function (item) {
+    addCard(item[2], item[0] + " for " + item[1],
+      "Learn this character's name",
+      item[1]);
+  });
+}
+
+function showStories() {
+  stories.forEach(function (story) {
+    addCard(story[0], story[1], story[2], story[1] + ". " + story[2]);
+  });
+}
+
+function showHabits() {
+  habits.forEach(function (habit) {
+    addCard(habit[0], habit[1], habit[2],
+      habit[1] + ". " + habit[2]);
+  });
+}
+
+function showShlokas() {
+  shlokas.forEach(function (item) {
+    addCard("🪷", item[0], item[1], item[1]);
+  });
+}
+</script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./service-worker.js")
+        .catch((error) => {
+          console.error("Service worker registration failed:", error);
+        });
+    });
+  }
+</script>
+
+</body>
+</html>

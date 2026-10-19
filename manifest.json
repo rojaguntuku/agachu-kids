@@ -1,0 +1,11 @@
+
+{
+  "name": "AgAchu Kids",
+  "short_name": "AgAchu",
+  "description": "A joyful learning app for little learners",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFF8E8",
+  "theme_color": "#FFE7A8",
+  "orientation": "portrait"
+}
