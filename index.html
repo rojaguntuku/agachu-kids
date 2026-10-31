@@ -1,543 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#FFE7A8">
-  <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AgAchu Kids - Happy Learning</title>
-
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#36bdf2"><link rel="manifest" href="manifest.webmanifest">
+<title>AgAchu Kids</title>
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffaf0;
-  color: #29483a;
-}
-
-header {
-  background: #e4f3df;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: #39744b;
-}
-
-.tagline {
-  font-size: 13px;
-}
-
-button {
-  font-size: 15px;
-  padding: 12px;
-  border: 0;
-  border-radius: 14px;
-  background: #e6f1ff;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #d2e9d0;
-}
-
-main {
-  max-width: 1000px;
-  margin: auto;
-  padding: 18px;
-}
-
-.hero {
-  padding: 25px;
-  border-radius: 25px;
-  background: linear-gradient(120deg, #e2f4df, #fff0d9);
-  text-align: center;
-}
-
-.mascot {
-  font-size: 65px;
-}
-
-h1 {
-  font-size: 32px;
-}
-
-h2 {
-  margin-top: 25px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #e4e8dc;
-  border-radius: 18px;
-  padding: 16px 10px;
-  text-align: center;
-  box-shadow: 0 3px 10px #29483a10;
-}
-
-.card .emoji {
-  font-size: 38px;
-}
-
-.card h3 {
-  margin: 8px 0;
-}
-
-.card p {
-  font-size: 13px;
-}
-
-.panel {
-  margin-top: 20px;
-  padding: 18px;
-  background: white;
-  border-radius: 20px;
-}
-
-.letters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: 15px 0;
-}
-
-.letters button {
-  min-width: 40px;
-  background: #f5e7ff;
-}
-
-.hidden {
-  display: none;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #66806d;
-}
-
-@media (max-width: 500px) {
-  h1 {
-    font-size: 26px;
-  }
-
-  main {
-    padding: 12px;
-  }
-}
-</style>
-</head>
-
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(#dff8ff,#fff2f8);font-family:"Trebuchet MS",Arial,sans-serif;color:#29445c}
+button{font:inherit;cursor:pointer;border:0}.top{position:sticky;top:0;z-index:4;background:linear-gradient(90deg,#35bdf2,#77dfd4);padding:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;box-shadow:0 3px 12px #8bbdcc}
+.brand{font-size:24px;font-weight:900;color:white;text-shadow:1px 2px #1687b5}.top button,.btn{padding:11px 16px;border-radius:30px;background:#ffd05b;color:#67440b;font-weight:900;box-shadow:0 4px 0 #d99b2d;margin:4px}
+main{max-width:1150px;margin:auto;padding:16px}.hero,.panel{border-radius:26px;padding:20px;background:linear-gradient(135deg,#fff0b7,#ffdaed,#c5f1ff);box-shadow:0 5px 18px #8ab7c633;text-align:center;margin-bottom:18px}
+.hero h1{font-size:clamp(38px,8vw,70px);color:#f58a40;margin:8px}.mascot{font-size:100px}.hero p{font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px}.folder{min-height:145px;border:3px solid white;border-radius:23px;background:#fff;box-shadow:0 5px 0 #c8e6f2;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#257da6;font-weight:900}.pic{font-size:48px}.folder small{font-size:12px;color:#7891a1}
+h2{color:#178dbb}.lesson{background:#fff;border-radius:25px;padding:20px;text-align:center;box-shadow:0 4px 15px #9bbdcc33}.art{font-size:clamp(90px,20vw,150px)}.word{font-size:clamp(30px,6vw,46px);color:#ed8b3d}.desc{font-size:19px;line-height:1.5}.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}.nav button{min-width:125px}.blue{background:#6bd0f2}.pink{background:#ffa5c8}.green{background:#a9e9a9}.muted{background:#eaf4f8;box-shadow:none;color:#4d6c80}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:9px}.tile{background:#fff4d9;border:2px solid #ffe3a6;border-radius:16px;padding:12px;font-weight:800;color:#785321}.tile .pic{display:block}.info{background:#f0faff;border-radius:16px;padding:14px;margin:12px 0;text-align:left}
+input{width:100%;padding:12px;border:2px solid #c4e2ef;border-radius:12px;margin:8px 0;font:inherit}
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.part{background:#e6f8ff;border-radius:14px;padding:12px;color:#267ba2;font-weight:800}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.state{padding:12px 5px;border-radius:12px;background:#bcebd0;font-weight:800;color:#285a43}.state:nth-child(3n){background:#ffe1a8}.state:nth-child(3n+1){background:#d9ceff}
+canvas{width:100%;height:220px;background:white;border:3px dashed #9fd7e9;border-radius:18px;touch-action:none}
+.tree{display:flex;flex-direction:column;align-items:center;gap:8px}.node{background:#fff0c8;border:2px solid #edcf83;border-radius:12px;padding:10px;text-align:center;font-weight:800}.children{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+footer{text-align:center;padding:20px;color:#7893a3}
+@media(max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start}.top button{padding:8px 10px}}
+</style></head>
 <body>
-
-<header>
-  <div>
-    <div class="logo">🐛 AgAchu Kids</div>
-    <div class="tagline">Little Steps, Happy Learning!</div>
-  </div>
-
-  <button onclick="toggleSound()" id="soundButton">
-    🔊 Sound On
-  </button>
-</header>
-
-<main>
-
-  <section id="home">
-    <div class="hero">
-      <div class="mascot">🐛 🌈 🌼</div>
-      <h1>Welcome to AgAchu Kids!</h1>
-      <p>Learn letters, stories, good habits and Indian epics.</p>
-      <button onclick="openSection('letters')">
-        🚀 Let's Learn
-      </button>
-    </div>
-
-    <h2>🌟 Choose Your Adventure</h2>
-
-    <div class="grid">
-      <button class="card" onclick="openSection('letters')">
-        <div class="emoji">🔤</div>
-        <h3>Letters & Words</h3>
-        <p>A for Apple</p>
-      </button>
-
-      <button class="card" onclick="openSection('numbers')">
-        <div class="emoji">🔢</div>
-        <h3>Numbers</h3>
-        <p>Learn to count</p>
-      </button>
-
-      <button class="card" onclick="openSection('world')">
-        <div class="emoji">🌍</div>
-        <h3>My World</h3>
-        <p>Animals, fruits, colors</p>
-      </button>
-
-      <button class="card" onclick="openSection('ramayana')">
-        <div class="emoji">🏹</div>
-        <h3>Ramayana</h3>
-        <p>Meet the characters</p>
-      </button>
-
-      <button class="card" onclick="openSection('mahabharata')">
-        <div class="emoji">📖</div>
-        <h3>Mahabharata</h3>
-        <p>Meet the heroes</p>
-      </button>
-
-      <button class="card" onclick="openSection('stories')">
-        <div class="emoji">🌙</div>
-        <h3>Stories</h3>
-        <p>Little story time</p>
-      </button>
-
-      <button class="card" onclick="openSection('habits')">
-        <div class="emoji">🪥</div>
-        <h3>Good Habits</h3>
-        <p>Healthy daily routines</p>
-      </button>
-
-      <button class="card" onclick="openSection('shlokas')">
-        <div class="emoji">🪷</div>
-        <h3>Shlokas</h3>
-        <p>Learn sacred verses</p>
-      </button>
-    </div>
-  </section>
-
-  <section id="lessonSection" class="panel hidden">
-    <button onclick="goHome()">← Home</button>
-    <h2 id="sectionTitle">Learning</h2>
-    <div id="letterButtons" class="letters"></div>
-    <div id="lessonGrid" class="grid"></div>
-  </section>
-
-</main>
-
-<footer>
-  AgAchu Kids ❤️ Learn gently. Grow happily.
-</footer>
-
+<header class="top"><div class="brand">🦁 AgAchu Kids</div><div><button onclick="home()">🏠 Home</button><button id="music" onclick="toggleMusic()">🎵 Music</button></div></header>
+<main id="app"></main><footer>AgAchu Kids · Learn • Play • Grow 🌈</footer>
 <script>
-let soundOn = true;
-
-const alphabet = [
-  ["A", "Apple", "🍎"],
-  ["B", "Ball", "⚽"],
-  ["C", "Cat", "🐱"],
-  ["D", "Dog", "🐶"],
-  ["E", "Elephant", "🐘"],
-  ["F", "Fish", "🐟"],
-  ["G", "Grapes", "🍇"],
-  ["H", "House", "🏠"],
-  ["I", "Ice Cream", "🍦"],
-  ["J", "Jug", "🏺"],
-  ["K", "Kite", "🪁"],
-  ["L", "Lion", "🦁"],
-  ["M", "Mango", "🥭"],
-  ["N", "Nest", "🪺"],
-  ["O", "Orange", "🍊"],
-  ["P", "Parrot", "🦜"],
-  ["Q", "Queen", "👑"],
-  ["R", "Rabbit", "🐰"],
-  ["S", "Sun", "☀️"],
-  ["T", "Tiger", "🐯"],
-  ["U", "Umbrella", "☂️"],
-  ["V", "Van", "🚐"],
-  ["W", "Watch", "⌚"],
-  ["X", "Xylophone", "🎵"],
-  ["Y", "Yak", "🐂"],
-  ["Z", "Zebra", "🦓"]
-];
-
-const ramayana = [
-  ["A", "Angada", "🤴"],
-  ["A", "Ahalya", "🌸"],
-  ["A", "Anjana", "🙏"],
-  ["B", "Bharata", "👑"],
-  ["H", "Hanuman", "🐒"],
-  ["J", "Janaka", "👑"],
-  ["K", "Kaikeyi", "🌺"],
-  ["K", "Kumbhakarna", "💪"],
-  ["L", "Lakshmana", "🏹"],
-  ["M", "Mandodari", "🌷"],
-  ["R", "Rama", "🏹"],
-  ["R", "Ravana", "👑"],
-  ["S", "Sita", "🌼"],
-  ["S", "Sugriva", "🐒"],
-  ["V", "Vibhishana", "🙏"]
-];
-
-const mahabharata = [
-  ["A", "Arjuna", "🏹"],
-  ["A", "Abhimanyu", "🛡️"],
-  ["B", "Bhima", "💪"],
-  ["D", "Draupadi", "🌺"],
-  ["D", "Drona", "🏹"],
-  ["G", "Gandhari", "🙏"],
-  ["K", "Krishna", "🦚"],
-  ["K", "Karna", "🏹"],
-  ["N", "Nakula", "⚔️"],
-  ["S", "Sahadeva", "⚔️"],
-  ["S", "Shakuni", "🎲"],
-  ["Y", "Yudhishthira", "👑"],
-  ["B", "Bheeshma", "🛡️"]
-];
-
-const world = [
-  ["🍎", "Apple", "Fruit"],
-  ["🍌", "Banana", "Fruit"],
-  ["🥭", "Mango", "Fruit"],
-  ["🥕", "Carrot", "Vegetable"],
-  ["🐘", "Elephant", "Animal"],
-  ["🐶", "Dog", "Animal"],
-  ["🐱", "Cat", "Animal"],
-  ["🦜", "Parrot", "Bird"],
-  ["🌹", "Rose", "Flower"],
-  ["☀️", "Sun", "Sky"],
-  ["🌙", "Moon", "Sky"],
-  ["🚗", "Car", "Vehicle"],
-  ["🔴", "Red", "Color"],
-  ["🔵", "Blue", "Color"],
-  ["🟢", "Green", "Color"],
-  ["⭐", "Star", "Shape"],
-  ["❤️", "Heart", "Shape"]
-];
-
-const habits = [
-  ["🪥", "Brush my teeth", "I brush my teeth every day."],
-  ["🧼", "Wash my hands", "I wash my hands before eating."],
-  ["🧸", "Put toys away", "I keep my toys in their place."],
-  ["🙏", "Be kind", "I use kind words and gentle hands."],
-  ["🥗", "Eat healthy food", "I try different healthy foods."],
-  ["💧", "Drink water", "I drink water throughout the day."],
-  ["📚", "Read a book", "I enjoy books with my family."],
-  ["🛏️", "Sleep on time", "I follow a calm bedtime routine."]
-];
-
-const stories = [
-  ["🌱", "The Little Seed", "A little seed grows with sunshine, water and care."],
-  ["🐰", "The Kind Rabbit", "A rabbit shares an apple with a hungry friend."],
-  ["⭐", "The Little Star", "A little star shines brightly in the night sky."],
-  ["🐢", "The Tortoise", "Slow and steady effort can help us reach our goals."]
-];
-
-const shlokas = [
-  ["Saraswati Prayer", "Saraswati Namastubhyam"],
-  ["Guru Prayer", "Gurur Brahma Gurur Vishnuh"],
-  ["Peace Prayer", "Om Shanti Shanti Shantih"]
-];
-
-function toggleSound() {
-  soundOn = !soundOn;
-
-  document.getElementById("soundButton").textContent =
-    soundOn ? "🔊 Sound On" : "🔇 Sound Off";
-
-  if (!soundOn && "speechSynthesis" in window) {
-    speechSynthesis.cancel();
-  }
-}
-
-function speak(text) {
-  if (!soundOn) return;
-
-  if ("speechSynthesis" in window) {
-    speechSynthesis.cancel();
-
-    const message = new SpeechSynthesisUtterance(text);
-    message.lang = "en-US";
-    message.rate = 0.8;
-
-    speechSynthesis.speak(message);
-  }
-}
-
-function goHome() {
-  document.getElementById("home").classList.remove("hidden");
-  document.getElementById("lessonSection").classList.add("hidden");
-}
-
-function openSection(section) {
-  const home = document.getElementById("home");
-  const panel = document.getElementById("lessonSection");
-  const title = document.getElementById("sectionTitle");
-  const grid = document.getElementById("lessonGrid");
-  const letters = document.getElementById("letterButtons");
-
-  home.classList.add("hidden");
-  panel.classList.remove("hidden");
-  grid.replaceChildren();
-  letters.replaceChildren();
-
-  const titles = {
-    letters: "🔤 English Letters & Words",
-    numbers: "🔢 Let's Count!",
-    world: "🌍 My Wonderful World",
-    ramayana: "🏹 Ramayana Names",
-    mahabharata: "📖 Mahabharata Names",
-    stories: "🌙 Little Stories",
-    habits: "🌱 Good Habits",
-    shlokas: "🪷 Shlokas"
-  };
-
-  title.textContent = titles[section] || "AgAchu Kids";
-
-  if (section === "letters") {
-    showAlphabet();
-  } else if (section === "numbers") {
-    showNumbers();
-  } else if (section === "world") {
-    showWorld();
-  } else if (section === "ramayana") {
-    showNames(ramayana);
-  } else if (section === "mahabharata") {
-    showNames(mahabharata);
-  } else if (section === "stories") {
-    showStories();
-  } else if (section === "habits") {
-    showHabits();
-  } else if (section === "shlokas") {
-    showShlokas();
-  }
-
-  window.scrollTo(0, 0);
-}
-
-function addCard(emoji, title, description, speechText) {
-  const grid = document.getElementById("lessonGrid");
-
-  const card = document.createElement("div");
-  card.className = "card";
-
-  const picture = document.createElement("div");
-  picture.className = "emoji";
-  picture.textContent = emoji;
-
-  const heading = document.createElement("h3");
-  heading.textContent = title;
-
-  const info = document.createElement("p");
-  info.textContent = description || "";
-
-  const listen = document.createElement("button");
-  listen.textContent = "🔊 Listen";
-  listen.onclick = function () {
-    speak(speechText || title);
-  };
-
-  card.append(picture, heading, info, listen);
-  grid.append(card);
-}
-
-function showAlphabet() {
-  alphabet.forEach(function (item) {
-    addCard(item[2], item[0] + " for " + item[1],
-      "Learn the letter " + item[0],
-      item[0] + " for " + item[1]);
-  });
-}
-
-function showNumbers() {
-  for (let i = 0; i <= 20; i++) {
-    addCard("🔢", String(i), "Let's count!", String(i));
-  }
-}
-
-function showWorld() {
-  world.forEach(function (item) {
-    addCard(item[0], item[1], item[2], item[1]);
-  });
-}
-
-function showNames(list) {
-  const letters = document.getElementById("letterButtons");
-  const uniqueLetters = [...new Set(list.map(function (item) {
-    return item[0];
-  }))].sort();
-
-  const allButton = document.createElement("button");
-  allButton.textContent = "All";
-  allButton.onclick = function () {
-    displayNames(list);
-  };
-  letters.append(allButton);
-
-  uniqueLetters.forEach(function (letter) {
-    const button = document.createElement("button");
-    button.textContent = letter;
-
-    button.onclick = function () {
-      displayNames(list.filter(function (item) {
-        return item[0] === letter;
-      }));
-    };
-
-    letters.append(button);
-  });
-
-  displayNames(list);
-}
-
-function displayNames(list) {
-  document.getElementById("lessonGrid").replaceChildren();
-
-  list.forEach(function (item) {
-    addCard(item[2], item[0] + " for " + item[1],
-      "Learn this character's name",
-      item[1]);
-  });
-}
-
-function showStories() {
-  stories.forEach(function (story) {
-    addCard(story[0], story[1], story[2], story[1] + ". " + story[2]);
-  });
-}
-
-function showHabits() {
-  habits.forEach(function (habit) {
-    addCard(habit[0], habit[1], habit[2],
-      habit[1] + ". " + habit[2]);
-  });
-}
-
-function showShlokas() {
-  shlokas.forEach(function (item) {
-    addCard("🪷", item[0], item[1], item[1]);
-  });
-}
-</script>
-
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./service-worker.js")
-        .catch((error) => {
-          console.error("Service worker registration failed:", error);
-        });
-    });
-  }
-</script>
-
-</body>
-</html>
+"use strict";
+const app=document.getElementById("app");let items=[],idx=0,title="",ctx=null,music=false,timer=null,canvas=null,pen=false;
+const say=t=>{if(!("speechSynthesis"in window)){alert(t);return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.rate=.86;u.pitch=1.12;speechSynthesis.speak(u)};
+const safe=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function welcome(){app.innerHTML=`<section class="hero"><div class="mascot">🦁🌈</div><h1>Welcome!</h1><p>Welcome to AgAchu Kids — Learn • Play • Grow</p><button class="btn pink" onclick="say('Welcome to AgAchu Kids! Let us learn and play together!')">🔊 Welcome</button><button class="btn green" onclick="home()">Let's Start ➜</button></section>`}
+const folders=[
+["🔤","Letters & Names","A–Z and epic names",letters],["🔢","Numbers & Counting","1 to 100",numbers],["🔷","Shapes & Colors","2D and 3D",shapes],["✏️","Tracing & Matching","Finger practice",tracing],["🍎","Fruits & Vegetables","Food pictures",food],["🌸","Flowers & Nature","Explore nature",nature],["🐘","Animals & Birds","Animal friends",animals],["🚗","Vehicles","Land, air and water",vehicles],["🧍","My Body","Girl and boy",body],["📅","Days & Months","Calendar and seasons",calendar],["🪐","Solar System","Sun and planets",space],["🌍","World Map","Continents and oceans",world],["🇺🇸","USA States","Explore 50 states",usa],["👩‍🚒","Professions","Community helpers",jobs],["😊","Emotions & Manners","Feelings and kindness",life],["💬","Questions & Answers","Practice speaking",questions],["🎵","Rhymes & Songs","Good morning songs",rhymes],["🙏","Shlokas","Prayer learning",shlokas],["🌳","Ramayana","Characters and roots",()=>epic("rama")],["🏹","Mahabharata","Characters and roots",()=>epic("maha")],["🧼","Life Skills","Daily habits",skills],["📖","Stories","Little stories",stories]];
+function home(){app.innerHTML=`<section class="hero"><div class="mascot">🦁🌈</div><h1>Hello, Little Learner!</h1><p>Choose a colorful picture folder to begin.</p></section><div class="grid">${folders.map((f,i)=>`<button class="folder" data-i="${i}"><span class="pic">${f[0]}</span>${f[1]}<small>${f[2]}</small></button>`).join("")}</div>`;app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>folders[+b.dataset.i][3]())}
+function shell(t,d,c){app.innerHTML=`<section class="panel"><button class="btn muted" onclick="home()">⬅ Home</button><h2>${t}</h2><p>${d||""}</p></section>${c}`}
+function lesson(t,a){title=t;items=a;idx=0;render()}
+function render(){let x=items[idx];shell(title,"Tap Listen, then use Previous and Next.",`<section class="lesson"><p>${idx+1} / ${items.length}</p><div class="art">${x[0]}</div><div class="word">${safe(x[1])}</div><p class="desc">${safe(x[2]||"Let's learn together!")}</p><button class="btn pink" onclick="say('${safe(x[1]+". "+(x[2]||""))}')">🔊 Listen</button><div class="nav"><button class="btn muted" onclick="step(-1)">⬅ Previous</button><button class="btn green" onclick="step(1)">Next ➜</button></div></section>`)}
+function step(d){if(idx+d<0){say("This is the first one");return}if(idx+d>=items.length){say("Wonderful! You finished this folder!");return}idx+=d;render()}
+const A="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),W=["Apple","Ball","Cat","Dog","Elephant","Fish","Giraffe","House","Ice cream","Juice","Kite","Lion","Mango","Nest","Orange","Parrot","Queen","Rabbit","Sun","Tiger","Umbrella","Van","Watch","Xylophone","Yak","Zebra"],P=["🍎","⚽","🐱","🐶","🐘","🐟","🦒","🏠","🍦","🧃","🪁","🦁","🥭","🪺","🍊","🦜","👑","🐰","☀️","🐯","☂️","🚐","⌚","🎵","🐂","🦓"];
+function letters(){shell("🔤 Letters A–Z","Choose a letter picture. Each lesson has sound and Previous / Next.",`<div class="tiles">${A.map((a,i)=>`<button class="tile" data-letter="${i}"><span class="pic">${P[i]}</span>${a} for ${W[i]}</button>`).join("")}</div><div class="info"><button class="btn pink" onclick="epic('rama')">🌳 Ramayana names</button><button class="btn blue" onclick="epic('maha')">🏹 Mahabharata names</button></div>`);app.querySelectorAll("[data-letter]").forEach(b=>b.onclick=()=>{lesson("Letters A–Z",A.map((a,i)=>[P[i],a+" for "+W[i],"This is letter "+a+". "+W[i]+" begins with "+a+"."]));idx=+b.dataset.letter;render()})}
+function numbers(){lesson("Numbers 1–100",Array.from({length:100},(_,i)=>["🔢",String(i+1),"Let's count number "+(i+1)]))}
+function shapes(){lesson("2D & 3D Shapes",[["⚪","Circle","A round flat shape"],["🟦","Square","Four equal sides"],["🔺","Triangle","Three sides"],["▭","Rectangle","Four sides"],["⭐","Star","A star shape"],["❤️","Heart","A heart shape"],["⬟","Pentagon","Five sides"],["⬡","Hexagon","Six sides"],["🧊","Cube","A 3D shape with six square faces"],["⚽","Sphere","A round 3D shape"],["🥫","Cylinder","Two circular ends"],["🍦","Cone","A round base and a point"],["📦","Cuboid","A box-shaped 3D object"],["🔴","Red","The color red"],["🟡","Yellow","The color yellow"],["🔵","Blue","The color blue"],["🟢","Green","The color green"],["🟣","Purple","The color purple"],["🟠","Orange","The color orange"],["⚫","Black","The color black"],["⚪","White","The color white"]])}
+function tracing(){shell("✏️ Tracing","Choose a letter, then trace its dotted outline with your finger.",`<div class="tiles">${A.map(a=>`<button class="tile" data-tr="${a}">${a}</button>`).join("")}</div><h2 id="trlabel">Trace A</h2><canvas id="cv" width="900" height="300"></canvas><div class="nav"><button class="btn muted" onclick="clearCanvas()">Clear</button><button class="btn green" onclick="say('Great tracing!')">Done ⭐</button></div>`);canvas=document.getElementById("cv");canvasSetup("A");app.querySelectorAll("[data-tr]").forEach(b=>b.onclick=()=>canvasSetup(b.dataset.tr))}
+function canvasSetup(a){document.getElementById("trlabel").textContent="Trace "+a;let c=canvas.getContext("2d");c.clearRect(0,0,900,300);c.font="230px Arial";c.textAlign="center";c.textBaseline="middle";c.setLineDash([5,9]);c.strokeStyle="#a9d3e4";c.lineWidth=5;c.strokeText(a,450,150);c.setLineDash([]);canvas.onpointerdown=e=>{pen=true;canvas.setPointerCapture(e.pointerId);let r=canvas.getBoundingClientRect();c.beginPath();c.moveTo((e.clientX-r.left)*900/r.width,(e.clientY-r.top)*300/r.height)};canvas.onpointermove=e=>{if(!pen)return;let r=canvas.getBoundingClientRect();c.lineTo((e.clientX-r.left)*900/r.width,(e.clientY-r.top)*300/r.height);c.strokeStyle="#ed83ad";c.lineWidth=9;c.lineCap="round";c.stroke()};canvas.onpointerup=()=>pen=false}
+function clearCanvas(){canvasSetup(document.getElementById("trlabel").textContent.replace("Trace ",""))}
+function food(){lesson("Fruits & Vegetables",[["🍎","Apple","A crunchy fruit"],["🍌","Banana","A yellow fruit"],["🍊","Orange","A juicy citrus fruit"],["🥭","Mango","A sweet tropical fruit"],["🍇","Grapes","Small juicy fruits"],["🍓","Strawberry","A red fruit"],["🍉","Watermelon","A refreshing fruit"],["🍍","Pineapple","A tropical fruit"],["🍐","Pear","A juicy fruit"],["🍒","Cherry","A small red fruit"],["🥕","Carrot","An orange root vegetable"],["🥦","Broccoli","A green vegetable"],["🥔","Potato","Grows underground"],["🍅","Tomato","A fruit often used as a vegetable"],["🌽","Corn","Yellow kernels"],["🥒","Cucumber","A green vegetable"],["🧅","Onion","A layered vegetable"],["🍆","Eggplant","A purple vegetable"],["🫑","Bell pepper","A colorful vegetable"],["🥬","Lettuce","A leafy vegetable"],["🧄","Garlic","A cooking bulb"],["🫘","Beans","A healthy food"]])}
+function nature(){lesson("Flowers & Nature",[["🌹","Rose","A beautiful flower"],["🌻","Sunflower","A tall yellow flower"],["🌷","Tulip","A spring flower"],["🌼","Daisy","A flower with a bright center"],["🌸","Cherry blossom","A pink blossom"],["🪷","Lotus","An aquatic flower"],["🌺","Hibiscus","A tropical flower"],["🌱","Seedling","A young plant"],["🌳","Tree","Trees give shade"]])}
+function animals(){lesson("Animals & Birds",[["🐘","Elephant","A large land animal"],["🦁","Lion","A big cat"],["🐯","Tiger","A striped big cat"],["🐵","Monkey","A playful animal"],["🐶","Dog","A friendly pet"],["🐱","Cat","A common pet"],["🐮","Cow","A farm animal"],["🐴","Horse","A strong running animal"],["🐰","Rabbit","A small animal with long ears"],["🦒","Giraffe","An animal with a long neck"],["🦓","Zebra","An animal with stripes"],["🐼","Panda","A bear that eats bamboo"],["🦜","Parrot","A colorful bird"],["🦚","Peacock","A bird with beautiful feathers"],["🦆","Duck","A water bird"],["🦉","Owl","A bird often active at night"],["🐬","Dolphin","A sea mammal"],["🐢","Turtle","An animal with a shell"]])}
+function vehicles(){lesson("Vehicles",[["🚗","Car","Travels on roads"],["🚌","Bus","Carries many people"],["🚲","Bicycle","Has two wheels"],["🏍️","Motorcycle","A motor vehicle"],["🚑","Ambulance","Helps people who need medical care"],["🚒","Fire engine","Helps firefighters"],["🚓","Police car","Used by police officers"],["🚜","Tractor","Helps farmers"],["🚂","Train","Runs on railway tracks"],["✈️","Airplane","Flies in the sky"],["🚁","Helicopter","Can hover"],["🚢","Ship","Travels on water"],["🚀","Rocket","Travels into space"]])}
+function body(){let p=[["👀","Eyes","We see with our eyes"],["👂","Ears","We hear with our ears"],["👃","Nose","We smell with our nose"],["👄","Mouth","We talk and eat"],["🦷","Teeth","We chew food"],["✋","Hands","We hold things"],["☝️","Fingers","We touch and hold"],["💪","Arms","We lift and reach"],["🦵","Legs","We walk and run"],["🦶","Feet","We stand and walk"],["🧠","Brain","Helps us think"],["❤️","Heart","Pumps blood"],["🫁","Lungs","Help us breathe"]];shell("🧍 My Body","Choose a girl or boy cartoon, then tap each body-part card.",`<div style="text-align:center;font-size:100px" id="kid">👧</div><div class="nav"><button class="btn pink" onclick="document.getElementById('kid').textContent='👧';say('Girl')">👧 Girl</button><button class="btn blue" onclick="document.getElementById('kid').textContent='👦';say('Boy')">👦 Boy</button></div><div class="parts">${p.map((x,i)=>`<button class="part" data-part="${i}">${x[0]} ${x[1]}</button>`).join("")}</div>`);app.querySelectorAll("[data-part]").forEach(b=>b.onclick=()=>{let x=p[+b.dataset.part];say(x[1]+". "+x[2])})}
+function calendar(){lesson("Days, Months & Seasons",[...["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"].map(x=>["📅",x,"A day of the week"]),...["January","February","March","April","May","June","July","August","September","October","November","December"].map(x=>["🗓️",x,"A month of the year"]),["🌷","Spring","Flowers bloom"],["☀️","Summer","Warm and sunny"],["🍂","Autumn","Leaves change color"],["❄️","Winter","Cold weather"]])}
+function space(){lesson("Solar System",[["☀️","Sun","The star at the center of our solar system"],["⚫","Mercury","The closest planet to the Sun"],["🟡","Venus","A very hot planet"],["🌍","Earth","Our home planet"],["🔴","Mars","The red planet"],["🟠","Jupiter","The largest planet"],["🪐","Saturn","Famous for its rings"],["🩵","Uranus","An ice giant"],["🔵","Neptune","A distant ice giant"]])}
+function world(){lesson("World Map: Continents & Oceans",[["🌏","Asia","The largest continent"],["🦁","Africa","Known for diverse wildlife"],["🗽","North America","The USA, Canada and Mexico are here"],["🌎","South America","The Amazon rainforest is here"],["🐨","Oceania","Includes Australia and Pacific islands"],["🧊","Antarctica","A very cold continent"],["🌊","Pacific Ocean","The largest ocean"],["🌊","Atlantic Ocean","Between the Americas and Europe/Africa"],["🌊","Indian Ocean","Between Africa, Asia and Australia"],["🌊","Arctic Ocean","Around the Arctic"],["🌊","Southern Ocean","Surrounds Antarctica"]])}
+const states="Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming".split(",");
+function usa(){shell("🇺🇸 USA States","Tap a state to hear its name. This starter uses a colorful state picker, not a geographically accurate jigsaw map.",`<div class="map">${states.map(s=>`<button class="state" data-state="${safe(s)}">${safe(s)}</button>`).join("")}</div><div class="info" id="stateInfo">Choose a state.</div>`);app.querySelectorAll("[data-state]").forEach(b=>b.onclick=()=>{let s=b.dataset.state;document.getElementById("stateInfo").innerHTML="<h2>"+safe(s)+"</h2><p>"+safe(s)+" is one of the 50 states of the United States.</p>";say(s)})}
+function jobs(){lesson("Professions",[["👩‍⚕️","Doctor","Helps people stay healthy"],["👩‍🏫","Teacher","Helps children learn"],["👨‍🚒","Firefighter","Helps during emergencies"],["👮","Police officer","Helps keep people safe"],["👩‍🌾","Farmer","Grows food"],["🧑‍🍳","Chef","Prepares food"],["👩‍🚀","Astronaut","Explores space"],["🧑‍🔬","Scientist","Studies the world"],["🧑‍🔧","Mechanic","Repairs vehicles"],["✈️","Pilot","Flies an airplane"],["🦷","Dentist","Cares for teeth"],["📮","Mail carrier","Delivers letters"]])}
+function life(){lesson("Emotions & Manners",[["😊","Happy","It is nice to feel happy"],["😢","Sad","It is okay to feel sad"],["😠","Angry","Take a slow breath"],["😨","Scared","Tell a trusted grown-up"],["😴","Tired","Rest helps our body"],["🙏","Please","Say please when asking"],["💛","Thank you","Show gratitude"],["🤝","Take turns","Let everyone have a turn"],["👂","Listen","Listen when someone speaks"],["🧹","Clean up","Put toys away"],["🫶","Be kind","Use gentle hands and kind words"],["🛑","Body safety","Tell a trusted adult if something feels unsafe"]])}
+function questions(){let q=[["What is your name?","My name is…"],["How old are you?","I am … years old."],["Where do you live?","I live in…"],["What is your father's name?","My father's name is…"],["What is your mother's name?","My mother's name is…"],["Do you have a brother or sister?","My sibling is…"],["What are your grandparents' names?","My grandparents are…"],["What is your favorite color?","My favorite color is…"],["What food do you like?","I like…"],["How are you feeling?","I feel…"]];shell("💬 Questions & Answers","Practice with a grown-up. This app does not save answers. Avoid entering private addresses.",q.map(x=>`<div class="info"><b>${x[0]}</b><input placeholder="${x[1]}"><button class="btn muted" onclick="say('${x[0]}')">🔊 Hear question</button></div>`).join(""))}
+function rhymes(){shell("🎵 Rhymes & Songs","Original practice rhymes using your device's speech voice. Add recordings you own or have permission to use.",`<div class="info"><h3>🌞 Good Morning Song</h3><p>Good morning, sunshine, hello to the day,<br>Stretch up tall and wiggle away.<br>Clap your hands and tap your toes,<br>Wave to the world as the bright sun glows!</p><button class="btn pink" onclick="say('Good morning sunshine, hello to the day. Stretch up tall and wiggle away. Clap your hands and tap your toes. Wave to the world as the bright sun glows!')">🔊 Play</button></div><div class="info"><h3>🧸 Clean Up Song</h3><p>Toys in the basket, one by one. Cleaning together can be fun!</p><button class="btn" onclick="say('Toys in the basket, one by one. Cleaning together can be fun!')">🔊 Play</button></div><div class="info"><h3>🌙 Bedtime Song</h3><p>Stars are shining in the sky. Close your eyes and say goodnight.</p><button class="btn blue" onclick="say('Stars are shining in the sky. Close your eyes and say goodnight.')">🔊 Play</button></div><p>“You Are My Sunshine”: use a licensed or family recording; a commercial recording is not bundled.</p>`)}
+function shlokas(){lesson("Shlokas",[["🙏","Karagre Vasate Lakshmi","Morning prayer"],["🌊","Samudra Vasane Devi","Earth prayer"],["☀️","Gayatri Mantra","Om Bhur Bhuvah Svaha"],["🕉️","Shuklam Baradharam","Prayer"],["🌿","Maha Mrityunjaya","Om Tryambakam"],["🤝","Om Sahana Vavatu","Peace prayer"],["🪷","Krishnaya Vasudevaya","Krishna prayer"],["🌞","Namaste Savitre","Sun prayer"]])}
+function skills(){lesson("Life Skills",[["🌞","Wake up","Stretch and say good morning"],["🪥","Brush teeth","Brush gently with grown-up help"],["🚽","Potty time","Tell a grown-up when you need to go"],["🧼","Wash hands","Wash before eating"],["🍽️","Meal time","Sit safely and enjoy food"],["🧸","Put toys away","Keep play spaces tidy"],["🏃","Outdoor play","Play safely with a grown-up nearby"],["📖","Read a book","Look at pictures and listen"],["🛁","Bath time","A grown-up helps keep bath time safe"],["🌙","Bedtime","Rest and listen to a story"]])}
+function stories(){shell("📖 Little Stories","Short original stories.",`<div class="info"><h3>🐢 The Little Turtle</h3><p>A little turtle wanted to cross the garden. Slowly and carefully it kept going. A friend offered help. Together they reached the pond.</p><b>Moral: Keep trying and accept kind help.</b><button class="btn" onclick="say('A little turtle wanted to cross the garden. Slowly and carefully it kept going. A friend offered help. Together they reached the pond. Keep trying and accept kind help.')">🔊 Listen</button></div><div class="info"><h3>🌱 The Tiny Seed</h3><p>A tiny seed got sunshine, water and care. One day it grew into a beautiful plant.</p><b>Moral: Small steps help us grow.</b></div>`)}
+const rama=[["👑","Dasharatha","Father of Rama, Bharata, Lakshmana and Shatrughna"],["👸","Kausalya","Rama's mother"],["👸","Kaikeyi","Bharata's mother"],["👸","Sumitra","Mother of Lakshmana and Shatrughna"],["🏹","Rama","Prince of Ayodhya"],["🌸","Sita","Rama's wife"],["🏹","Lakshmana","Rama's brother"],["👑","Bharata","Rama's brother"],["🛡️","Shatrughna","Rama's brother"],["🐒","Hanuman","Devoted helper of Rama"],["🐒","Sugriva","Vanara king"],["🐻","Jambavan","Wise ally"],["🏹","Vali","Sugriva's brother"],["🐒","Angada","Son of Vali"],["🐒","Nala","Bridge builder in popular tradition"],["🐒","Nila","Vanara leader"],["🧘","Vishvamitra","Sage who guides Rama"],["🧘","Vashishta","Royal sage"],["👑","Janaka","Sita's father"],["👸","Urmila","Lakshmana's wife"],["👸","Mandavi","Bharata's wife"],["👸","Shrutakirti","Shatrughna's wife"],["👑","Lava","Son of Rama and Sita"],["👑","Kusha","Son of Rama and Sita"],["🧘","Valmiki","Sage traditionally credited with the Ramayana"],["🧘","Agastya","Sage who advises Rama"],["🧘","Atri","Sage"],["🌼","Anasuya","Atri's wife"],["🧘","Shabari","Devoted elder"],["🦅","Jatayu","Tries to rescue Sita"],["🦅","Sampati","Jatayu's brother"],["👹","Ravana","King of Lanka"],["👸","Mandodari","Ravana's wife"],["👹","Vibhishana","Ravana's brother"],["👹","Kumbhakarna","Ravana's brother"],["👹","Indrajit","Ravana's son"],["👹","Surpanakha","Ravana's sister"],["👹","Khara","Rakshasa leader"],["👹","Maricha","Golden deer episode"],["👸","Tara","Vali's wife"],["👸","Trijata","Appears in Ashoka grove episode"],["👑","Guha","Rama's friend"],["🧘","Narada","Sage"],["🧘","Rishyashringa","Sage"],["👑","Shanta","Dasharatha's daughter in some traditions"],["🐿️","Squirrel","Helps build the bridge in popular retellings"],["👹","Akshayakumara","Ravana's son"],["👹","Atikaya","Ravana's son"],["🌊","Ocean deity","Rama prays for help crossing the sea"],["🧘","Bharadwaja","Sage who welcomes Rama"]];
+const maha=[["👑","Shantanu","Kuru king"],["🌊","Ganga","Mother of Bhishma"],["🛡️","Bhishma","Son of Shantanu and Ganga"],["👑","Satyavati","Mother of Vyasa"],["👑","Chitrangada","Son of Shantanu"],["👑","Vichitravirya","Son of Satyavati"],["🧘","Vyasa","Sage and ancestor"],["👸","Ambika","Mother of Dhritarashtra"],["👸","Ambalika","Mother of Pandu"],["🧠","Vidura","Wise adviser"],["👑","Dhritarashtra","Father of Kauravas"],["👸","Gandhari","Mother of Kauravas"],["👑","Pandu","Father of Pandavas"],["👸","Kunti","Mother of Pandavas"],["👸","Madri","Mother of Nakula and Sahadeva"],["☀️","Karna","Son of Kunti and Surya"],["⚖️","Yudhishthira","Eldest Pandava"],["💪","Bhima","Strong Pandava"],["🏹","Arjuna","Great archer"],["⚔️","Nakula","Pandava twin"],["⚔️","Sahadeva","Pandava twin"],["👸","Draupadi","Wife of the five Pandavas"],["👑","Duryodhana","Eldest Kaurava"],["🛡️","Dushasana","Kaurava brother"],["🏹","Abhimanyu","Son of Arjuna and Subhadra"],["👸","Subhadra","Krishna's sister"],["👑","Krishna","Guide of Arjuna"],["🐚","Balarama","Krishna's brother"],["🧠","Shakuni","Gandhari's brother"],["🏹","Drona","Royal teacher"],["👸","Kripi","Drona's wife"],["⚔️","Ashwatthama","Son of Drona"],["🛡️","Kripacharya","Teacher and warrior"],["👑","Drupada","King of Panchala"],["⚔️","Dhrishtadyumna","Son of Drupada"],["👸","Shikhandi","Child of Drupada"],["👑","Virata","King of Matsya"],["👸","Uttara","Daughter of Virata"],["👑","Uttara Kumara","Prince of Matsya"],["🛡️","Sanjaya","Narrator of the war"],["🧘","Narada","Sage"],["🧘","Parashurama","Warrior sage"],["👑","Janamejaya","Descendant of Pandavas"],["⚔️","Ghatotkacha","Son of Bhima"],["👸","Hidimbi","Mother of Ghatotkacha"],["🛡️","Ekalavya","Archer"],["🏹","Satyaki","Pandava ally"],["🛡️","Adhiratha","Karna's foster father"],["👸","Radha","Karna's foster mother"],["🛡️","Shalya","King of Madra"],["👑","Jayadratha","King allied with Kauravas"],["👸","Dushala","Daughter of Dhritarashtra"],["⚔️","Kritavarma","Yadava warrior"],["🛡️","Barbarika","Figure in later regional traditions"],["👑","Parikshit","Son of Abhimanyu and Uttara"]];
+function epic(which){let r=which==="rama",t=r?"Ramayana":"Mahabharata",data=r?rama:maha,flow=r?`<div class="tree"><div class="node">Dasharatha + Kausalya / Kaikeyi / Sumitra</div><div>⬇️</div><div class="children"><div class="node">Rama</div><div class="node">Bharata</div><div class="node">Lakshmana</div><div class="node">Shatrughna</div></div><div>⬇️</div><div class="node">Rama + Sita → Lava and Kusha</div><div class="node">Allies: Hanuman • Sugriva • Jambavan</div><div class="node">Lanka: Ravana • Mandodari • Vibhishana • Kumbhakarna • Indrajit</div></div>`:`<div class="tree"><div class="node">Shantanu + Ganga → Bhishma</div><div>⬇️</div><div class="node">Shantanu + Satyavati → Chitrangada, Vichitravirya</div><div>⬇️</div><div class="node">Vyasa + Ambika / Ambalika → Dhritarashtra / Pandu</div><div>⬇️</div><div class="children"><div class="node">Dhritarashtra + Gandhari → Kauravas</div><div class="node">Pandu + Kunti / Madri → Pandavas</div></div><div>⬇️</div><div class="node">Pandavas + Draupadi • Arjuna + Subhadra → Abhimanyu</div><div class="node">Krishna: guide and relative of the Pandavas</div></div>`;shell(t+" – Family Roots","Simplified family flow. Traditional versions differ; this is not an exhaustive genealogy.",`<div class="info"><h3>Family roots flowchart</h3>${flow}</div><div class="tiles">${data.map((p,i)=>`<button class="tile" data-name="${i}"><span class="pic">${p[0]}</span>${p[1]}<small>${p[2]}</small></button>`).join("")}</div><div class="nav"><button class="btn muted" onclick="home()">⬅ Home</button><button class="btn green" onclick="say('You finished '+t)">Finish ➜</button></div>`);app.querySelectorAll("[data-name]").forEach(b=>b.onclick=()=>{let p=data[+b.dataset.name];say(p[1]+". "+p[2])})}
+function toggleMusic(){if(music){music=false;clearTimeout(timer);if(ctx)ctx.suspend();document.getElementById("music").textContent="🎵 Music";return}music=true;ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();ctx.resume();document.getElementById("music").textContent="🔇 Stop";playTune()}
+function playTune(){if(!music)return;[523,659,784,659,587,698,784,523].forEach((n,i)=>{let o=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime+i*.28;o.frequency.value=n;o.type="sine";g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.035,t+.04);g.gain.exponentialRampToValueAtTime(.0001,t+.23);o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+.25)});timer=setTimeout(playTune,2500)}
+welcome();
+if("serviceWorker"in navigator&&location.protocol!=="file:"){addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(console.warn))}
+</script></body></html>
